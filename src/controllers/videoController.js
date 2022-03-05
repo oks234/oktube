@@ -28,9 +28,8 @@ export const postEdit = (req, res) => {
   return res.redirect(`/videos/${id}`);
 };
 export const getUpload = (req, res) => {
-  const pageTitle = "Upload video";
   return res.render("upload", {
-    pageTitle: pageTitle,
+    pageTitle: "Upload video",
   });
 };
 export const postUpload = async (req, res) => {
@@ -39,15 +38,13 @@ export const postUpload = async (req, res) => {
     await Video.create({
       title,
       description,
-      createdAt: Date.now(),
       hashtags: hashtags.split(",").map((word) => `#${word}`),
-      meta: {
-        views: 0,
-        rating: 0,
-      },
     });
+    return res.redirect("/");
   } catch (error) {
-    console.log(error);
+    return res.render("upload", {
+      pageTitle: "Upload video",
+      errorMessage: error._message,
+    });
   }
-  return res.redirect("/");
 };
