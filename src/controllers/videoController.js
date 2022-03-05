@@ -33,6 +33,27 @@ export const getUpload = (req, res) => {
   });
 };
 export const postUpload = (req, res) => {
-  const { title } = req.body;
+  const { description, hashtags, title } = req.body;
+  // console.log({
+  //   title,
+  //   description,
+  //   createdAt: Date.now(),
+  //   hashtags: hashtags.split(",").map((word) => `#${word}`),
+  //   meta: {
+  //     views: 0,
+  //     rating: 0,
+  //   },
+  // });
+  const video = new Video({
+    title,
+    description,
+    createdAt: Date.now(),
+    hashtags: hashtags.split(",").map((word) => `#${word}`),
+    meta: {
+      views: 0,
+      rating: 0,
+    },
+  });
+  console.log(video);
   return res.redirect("/");
 };
