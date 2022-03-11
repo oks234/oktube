@@ -3,7 +3,6 @@ import User from "../models/User";
 export const getJoin = (req, res) =>
   res.render("join", { pageTitle: "Create Account" });
 export const postJoin = async (req, res) => {
-  console.log(req.body);
   const { name, email, username, password, location } = req.body;
   await User.create({
     name,
