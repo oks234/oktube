@@ -1,16 +1,9 @@
-# Wetube Reloaded
+# oktube
 
-/ -> Home
-/join -> Join
-/login -> Login
-/search -> Search
+## 소개
 
-/users/:id -> See user
-/users/logout -> Logout
-/users/edit -> Edit my profile
-/users/delete -> Delete my profile
+NodeJS, Express, Mongo and ES6를 사용해 Youtube를 Clone.
 
-/videos/:id -> See video
-/videos/:id/edit -> Edit video
-/videos/:id/delete -> Delete video
-/videos/upload -> Updload video
+노마드코더에서 강의 수강 중... 아래 링크 참고...
+
+[노마드코더](https://nomadcoders.co/)
